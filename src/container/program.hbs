@@ -1,0 +1,66 @@
+<div>
+
+    {{#with program}}
+        {{#with excursion}}
+            <div>
+                <h1>{{name}}</h1>
+                <p>{{location.city}}, {{location.country}}</p>
+                <p>Date: {{date}}</p>
+            </div>
+            <hr>
+            <h2>Program</h2>
+               {{#each program}}
+                     <p>{{name}}</p>
+                     <p>{{type}}</p>
+                     <p>{{duration}} hours</p>
+                     {{#with details}}
+                        {{#with museum}}
+                         <p>{{name}}</p>
+                            {{#with location}}
+                                <div>{{address}}, {{city}}, {{country}}</div>
+                            {{/with}}
+                                     
+                        <hr>
+                        <ul>
+                 {{#each exhibits}}
+                     <li> {{name}} </li>
+                     <li> {{artist}} </li>
+                     <li>{{description}} </li>
+                     <em>{{#if audio_guide}}Yes{{else}}No{{/if}}</em>
+                     {{/each}}
+                     </ul>
+                     
+                        {{/with}} 
+                     {{#with venue}}
+                     <p>{{name}}</p>
+                     {{#with location}}
+                        <div>{{address}}, {{city}}, {{country}}</div>
+                     {{/with}}
+                     {{/with}}
+                       
+                       
+                       {{#each performers}}
+                     <p>{{name}}</p>
+                     <p>{{type}}</p>
+                     {{/each}}
+
+                     <h3>Guide</h3>
+                     {{#with guide}}
+                     <li> {{name}} </li>
+                     <li> {{language}} </li>
+                     <li> {{rating}} </li>
+
+                    {{/with}}
+                    <hr>
+
+              
+                    </div>
+
+           
+
+ 
+{{/with}}
+{{/each}}
+{{/with}}
+{{/with}}
+</div>
